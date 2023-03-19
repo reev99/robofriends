@@ -7,6 +7,7 @@ import SearchBox from "../Components/SearchBox";
 import "./App.css";
 import Scroll from "../Components/Scroll";
 import ErrorBoundary from "../Components/ErrorBoundary";
+import Header from "../Components/Header";
 // actions
 import * as actions from "../actions";
 
@@ -32,8 +33,8 @@ const App = (props) => {
     // const [searchfield, setSearchfield] = useState("");
     const [count, setCount] = useState(0);
 
-    console.log(props);
-    console.log(robots);
+    // console.log(props);
+    // console.log(robots);
 
     // Load users from the server using the effect hook
     useEffect(() => {
@@ -52,14 +53,7 @@ const App = (props) => {
         <h1>Loading</h1>
     ) : (
         <div className="tc">
-            <h1 className="f1">Robofriends</h1>
-            <button
-                onClick={() => {
-                    setCount(count + 1);
-                }}
-            >
-                Click: {count}
-            </button>
+            <Header />
             <SearchBox searchChange={props.onSearchChange} />{" "}
             <Scroll>
                 {" "}

@@ -33,10 +33,7 @@ const rootReducer = combineReducers({
 });
 
 // Create the store
-const store = createStore(
-    rootReducer,
-    applyMiddleware(thunkMiddleware, logger)
-);
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 // Create the root element
 const root = ReactDOM.createRoot(document.getElementById("root"));
